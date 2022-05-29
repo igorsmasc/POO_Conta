@@ -1,19 +1,21 @@
 public class Conta {
-    int numeroDaConta;
-    String titular;
-    double saldo;
-    boolean estaAtiva;
+    private int numeroDaConta;
+    private String titular;
+    private double saldo = 0.0;
+    private boolean estaAtiva = true;
 
     public void consultarSaldo() {
         System.out.println("Seu saldo é: " + this.saldo);
     }
 
-    public void sacar() {
-        System.out.println("Voce sacou dinheiro");
+    public void sacar(double valorASerSacado) {
+        saldo -= valorASerSacado;
+        System.out.printf("Voce sacou %f reais", valorASerSacado);
     }
 
-    public void depositar() {
-        System.out.println("Voce depositou dinheiro");
+    public void depositar(double valorASerDepositado) {
+        saldo += valorASerDepositado;
+        System.out.printf("Voce depositou %f reais", valorASerDepositado);
     }
 
     public void statusDaConta() {
@@ -21,5 +23,22 @@ public class Conta {
         System.out.println("Titular: " + this.titular);
         System.out.println("Saldo: " + this.saldo);
         System.out.println("Ativa: " + this.estaAtiva);
+    }
+
+    public void desativarConta() {
+        this.estaAtiva = false;
+    }
+
+    public void ativarConta() {
+        this.estaAtiva = true;
+    }
+
+    // Adiciona nome do titular
+    public void setTitular(String titular) {
+        this.titular = titular;
+    }
+
+    public void setNumeroDaConta(int numeroDaConta) {
+        this.numeroDaConta = numeroDaConta;
     }
 }
