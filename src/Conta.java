@@ -4,6 +4,20 @@ public class Conta {
     private double saldo = 0.0;
     private boolean estaAtiva = true;
 
+    public Conta() {}
+
+//    public Conta(int numeroDaConta, String titular) {
+//        this.numeroDaConta = numeroDaConta;
+//        this.titular = titular;
+//    }
+
+    public Conta(int numeroDaConta, String titular) {
+        this.numeroDaConta = numeroDaConta;
+        this.titular = titular;
+        this.saldo = 0.0;
+        this.estaAtiva = true;
+    }
+
     public void consultarSaldo() {
         System.out.println("Seu saldo é: " + this.saldo);
     }
